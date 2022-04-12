@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+	height: 100vh;
+	flex-direction: column;
+	font-family: "Barlow Semi Condensed";
+	user-select: none;
+}
+
+header {
+	border: 0.5vmin solid hsl(217, 16%, 45%);
+	border-radius: 15px;
+	padding: 2.5vmin;
+	margin: 5vh 0 0;
+	flex-direction: row;
+}
+
+header > section {
+	background-color: white;
+	border-radius: 5px;
+	height: 100%;
+	padding: 0 7.5vw;
+	flex-direction: column;
+}
+
+header > section > h1 {
+	color: hsl(229, 64%, 46%);
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	position: relative;
+	top: 5px;
+}
+
+header > section > p {
+	color: dimgray;
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+main {
+	position: relative;
+	margin: 10vh 0 auto;
+}
+
+[src="images/bg-pentagon.svg"] {
+	width: 50vmin;
+}
+
+[src="images/icon-close.svg"] {
+	float: right;
+}
+
+[src="images/image-rules-bonus.svg"] {
+	height: 90%;
+}
+
+[src="images/logo-bonus.svg"] {
+	margin-right: 20vw;
+
+	/* Used because the logo is not vertically centered */
+	position: relative;
+	top: 5px;
+}
+
+.center-children {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.option {
+	background-color: white;
+	border: 2.5vmin solid black;
+	border-radius: 50%;
+	width: 20%;
+	height: 20%;
+	position: absolute;
+	padding: 2.5vmin;
+}
+
+.option > img {
+	height: 75%;
+}
+
+.lizard {
+	border-color: hsl(261, 72%, 63%);
+	bottom: -12.5%;
+	left: 2.5%;
+}
+
+.paper {
+	border-color: hsl(230, 89%, 65%);
+	top: 20%;
+	right: -15%;
+}
+
+.rock {
+	border-color: hsl(349, 70%, 56%);
+	bottom: -12.5%;
+	right: 2.5%;
+}
+
+.scissors {
+	border-color: hsl(40, 84%, 53%);
+	top: -12.5%;
+	left: calc(40% - 5vmin); /* 50% (halfway) - 10% (width / 2) - 5vmin (padding + border width) */
+}
+
+.spock {
+	border-color: hsl(189, 58%, 57%);
+	top: 20%;
+	left: -15%;
+}
+
+#active-round {
+	display: none;
+	align-items: end;
+}
+
+#active-round > div {
+	flex-direction: column;
+}
+
+#active-round h1 {
+	color: white;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 0.1rem;
+}
+
+#computer-choice, #player-choice {
+	margin: 0 5vw;
+}
+
+#computer-choice > h1, #player-choice > h1 {
+	margin: 0 0 5vh;
+}
+
+#computer-choice > div, #player-choice > div {
+	width: 25vmin;
+	height: 25vmin;
+	position: static;
+}
+
+#result {
+	display: none;
+}
+
+#result > h1 {
+	font-size: 4rem;
+	letter-spacing: 0;
+}
+
+#result > div {
+	background-color: white;
+	border-radius: 5px;
+	padding: 1vh 5vw;
+}
+
+#result > div > h1 {
+	color: hsl(229, 25%, 31%);
+	font-size: 1rem;
+}
+
+#rules {
+	background-color: white;
+	border-radius: 5px;
+	height: 75vmin;
+	position: fixed;
+	padding: 5vmin;
+	display: none;
+}
+
+#rules > h1 {
+	color: hsl(229, 25%, 31%);
+	float: left;
+}
+
+#rules-button {
+	border: 2px solid hsl(217, 16%, 45%);
+	border-radius: 5px;
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	padding: 5px 20px;
+
+	/* Rules Text */
+	color: white;
+	font-size: 0.5rem;
+	font-weight: 700;
+	letter-spacing: 0.25em;
+}
+
+@media only screen and (max-width: 1000px) {
+    #rules-button {
+		right: 50%;
+		transform: translate(50%, 0);
+	}
+	
+	#result {
+        position: fixed;
+		bottom: 100px;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	
+	<title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+	<!-- Score
+	Rules
+
+	You Picked
+	The House Picked
+
+	You Win
+	You Lose
+
+	Play Again -->
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		.attribution { font-size: 11px; text-align: center; }
+		.attribution a { color: hsl(228, 45%, 44%); }
+	</style>
+
+	<script src="scripts.js" async></script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="center-children">
+	<header class="center-children">
+		<img src="images/logo-bonus.svg" />
+		<section class="center-children">
+			<h1>SCORE</h1>
+			<p id="score">0</p>
+		</section>
+	</header>
+	<main>
+		<section id="options-screen">
+			<div class="scissors option center-children" onclick="user_picked('scissors')" >
+				<img src="images\icon-scissors.svg" />
+			</div>
+			<div class="spock option center-children" onclick="user_picked('spock')">
+				<img src="images\icon-spock.svg" />
+			</div>
+			<div class="paper option center-children" onclick="user_picked('paper')">
+				<img src="images\icon-paper.svg" />
+			</div>
+			<div class="lizard option center-children"  onclick="user_picked('lizard')">
+				<img src="images\icon-lizard.svg" />
+			</div>
+			<div class="rock option center-children"  onclick="user_picked('rock')">
+				<img src="images\icon-rock.svg" />
+			</div>
+			<img src="images/bg-pentagon.svg" />
+		</section>
+		<section id="active-round" class="center-children">
+			<div id="player-choice" class="center-children">
+				<h1>YOU PICKED</h1>
+			</div>
+			<div id="result" onclick='restart_game()'>
+				<h1 id="result-text"></h1>
+				<div>
+					<h1>PLAY AGAIN</h1>
+				</div>
+			</div>
+			<div id="computer-choice" class="center-children">
+				<h1>THE HOUSE PICKED</h1>
+			</div>
+		</section>
+		<div id="rules-button" onclick="show_rules_menu()">
+			<h1>RULES</h1>
+		</div>
+	</main>
+	<section id="rules">
+		<h1>RULES</h1>
+		<img src="images/icon-close.svg" onclick="close_rules_menu()" />
+		<br />
+		<img src="images/image-rules-bonus.svg" />
+	</section>
+	
+	<div class="attribution">
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+		Coded by <a href="#">David Hickling</a>.
+	</div>
+</body>
+</html>
